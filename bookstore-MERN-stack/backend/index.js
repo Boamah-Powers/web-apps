@@ -14,7 +14,11 @@ app.get('/', (request, response) => {
     return response.status(234).send('Welcome to MERN Stack Tutorial');
 })
 
+// Middleware for routing
 app.use('/books', booksRoute);
+
+// Middleware for handling CORS policy
+app.use(cors())
 
 mongoose
     .connect(mongoDBURL)
