@@ -6,9 +6,16 @@
         flex: 3;
 
         .wrapper {
+            height: 100%;
             padding-right: 50px;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            scrollbar-color: lightgray transparent;
+            padding-bottom: 50px;
 
             .info {
+                margin-top: 50px;
+                
                 .top {
                     display: flex;
                     justify-content: space-between;
