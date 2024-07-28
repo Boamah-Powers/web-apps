@@ -1,8 +1,29 @@
 import Chat from "../../components/chat/Chat";
 import List from "../../components/list/List";
 import "./profilePage.scss";
+import apiRequest from "../../lib/apiRequest"
+import { useNavigate } from "react-router-dom";
+import { useSnackbar } from 'notistack';
+
 
 function ProfilePage() {
+  const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
+
+  const handleLogout = () => {
+    apiRequest
+      .post("/auth/logout")
+      .then(() => {
+        localStorage.removeItem("user");
+        navigate('/');
+        enqueueSnackbar("User logged out successfully!", {variant: "success"});
+      })
+      .catch((error) => {
+        console.log(error);
+        enqueueSnackbar("Log out failed!", {variant: "error"});
+      })
+  }
+
   return (
     <div className="profilePage">
       <div className="details">
@@ -21,6 +42,7 @@ function ProfilePage() {
             </span>
             <span>Username: <b>John Doe</b></span>
             <span>Email: <b>johndoe@gmail.com</b></span>
+            <button onClick={handleLogout}>Logout</button>
           </div>
           <div className="title">
             <h1>My List</h1>
