@@ -2,13 +2,15 @@ import "./login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useSnackbar } from 'notistack';
 import apiRequest from "../../lib/apiRequest";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 
 function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
+  const { updateUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +27,7 @@ function Login() {
     apiRequest
       .post("/auth/login", data)
       .then((response) => {
-        localStorage.setItem("user", JSON.stringify(response.data))
+        updateUser(response.data);
         navigate("/");
         setIsLoading(false);
         enqueueSnackbar("User logged in successfully!", { variant: "success" });
