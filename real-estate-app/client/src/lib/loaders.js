@@ -1,4 +1,5 @@
 import apiRequest from "./apiRequest";
+import { defer } from "react-router-dom";
 
 export const singlePageLoader = ({ request, params }) => {
   return apiRequest
@@ -12,22 +13,17 @@ export const singlePageLoader = ({ request, params }) => {
 };
 
 export const listPageLoader = ({ request, params }) => {
-  const query = request.url.split("?")[1]
-  return apiRequest
+  const query = request.url.split("?")[1];
+  const postPromise = apiRequest
     .get("/posts?" + query)
     .then((response) => {
       return response.data;
     })
     .catch((error) => {
       console.log(error);
-    })
-  
-  // return apiRequest
-  //   .get("/posts/" + params.id)
-  //   .then((response) => {
-  //     return response.data;
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
+    });
+
+  return defer({
+    postResponse: postPromise,
+  });
 };
