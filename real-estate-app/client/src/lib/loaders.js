@@ -27,3 +27,18 @@ export const listPageLoader = ({ request, params }) => {
     postResponse: postPromise,
   });
 };
+
+export const profilePageLoader = () => {
+  const postPromise = apiRequest
+    .get("/users/profilePosts")
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  return defer({
+    postResponse: postPromise,
+  });
+};
