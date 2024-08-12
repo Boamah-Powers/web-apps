@@ -38,7 +38,17 @@ export const profilePageLoader = () => {
       console.log(error);
     });
 
+  const chatPromise = apiRequest
+    .get("/chats")
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
   return defer({
     postResponse: postPromise,
+    chatResponse: chatPromise,
   });
 };
