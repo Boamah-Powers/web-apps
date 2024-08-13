@@ -4,13 +4,16 @@ import App from "./App.jsx";
 import { SnackbarProvider } from "notistack";
 import "./index.scss";
 import { AuthContextProvider } from "./context/AuthContext.jsx";
+import { SocketContextProvider } from "./context/SocketContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <SnackbarProvider>
-      <AuthContextProvider>
-        <App />
-      </AuthContextProvider>
-    </SnackbarProvider>
+    <AuthContextProvider>
+      <SocketContextProvider>
+        <SnackbarProvider>
+          <App />
+        </SnackbarProvider>
+      </SocketContextProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 );
