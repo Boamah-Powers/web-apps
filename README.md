@@ -6,11 +6,7 @@ This repository contains a collection of web applications developed using variou
 
 - [Introduction](#introduction)
 - [Projects](#projects)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+
 
 ## Introduction
 
