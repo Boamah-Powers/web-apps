@@ -21,48 +21,19 @@ This repository showcases multiple web applications, each focusing on different 
 ### Bookstore (MERN Stack)
 A full-stack bookstore application built using the MERN stack (MongoDB, Express.js, React, and Node.js). This project covers various topics including backend CRUD operations, backend routing with Express, managing CORS policy in Node.js and Express.js, MongoDB operations using Mongoose, frontend CRUD operations, frontend routing with React Router, and enhancing user experience with Tailwind CSS and alerts.
 
-## Technologies Used
+#### Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript, React
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Other Tools**: Git, Vite, Tailwind CSS
 
-## Installation
+### Real Estate App (MERN Stack)
+This project is a full-stack real estate platform that allows users to browse, search, save property listings, register, log in, update profiles, and add new property listings. The application also supports real-time communication between users. The frontend is built with React, while the backend is powered by Node.js, Express, MongoDB, and Socket.io.
 
-To install and run any project in this repository:
+#### Technologies Used
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/Boamah-Powers/web-apps.git
-    cd web-apps
-    ```
-
-2. Navigate to the project directory:
-    ```bash
-    cd project-name
-    ```
-
-3. Install dependencies:
-    ```bash
-    npm install
-    ```
-
-4. Start the development server:
-    ```bash
-    npm start
-    ```
-
-## Usage
-
-1. Ensure MongoDB is running on your local machine or provide a MongoDB URI in the environment variables.
-2. Follow the installation steps for the specific project.
-3. Open your browser and navigate to the specified URL to access the application.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-Special thanks to all the contributors and the open-source community for their invaluable resources and support.
+- **Frontend**: React, React Router, Scss, Notistack, React Hook Form, DOMPurify, Cloudinary, Axios, Socket.io
+- **Backend**: Node.js, Express.js, Socket.io, JSON Web Tokens, brcypt
+- **Database**: MongoDB
+- **Other Tools**: Git, Vite
