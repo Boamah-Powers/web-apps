@@ -1,10 +1,10 @@
 {
   "name": "ai-models",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon --watch . --ext js,mjs,json,ts,hbs,css --exec 'node app.js'"
   },
   "keywords": [],
   "author": "",

@@ -4,6 +4,10 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'node:fs';
 
+// routes
+import summarizerRoute from './routes/summarizer.route.js';
+import textToImageRoute from './routes/text-to-image.route.js';
+
 dotenv.config();
 
 const app = express();
@@ -30,6 +34,9 @@ app.set('view engine', 'hbs');
 app.get('/', (req, res) => {
     res.render('landing-page');
 });
+
+app.use('/summarizer', summarizerRoute);
+app.use('/text-to-image', textToImageRoute);
 
 app.listen(PORT, () => {
     console.log(`Server started successfully on port ${PORT}!`);
