@@ -1,1 +1,14 @@
-<h1>This is the summarizer pages</h1>
+<div class="summarizer">
+	<div class="left-editor">
+		<form action="" method="post">
+			<textarea
+				placeholder="Enter your message ..."
+				name="formText"
+			>{{originalText}}</textarea>
+			<input type="submit" value="Submit" />
+		</form>
+	</div>
+	<div class="right-editor">
+		<div class="summarizedText">{{{summarizedText}}}</div>
+	</div>
+</div>

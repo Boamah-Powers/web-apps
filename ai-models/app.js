@@ -4,6 +4,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'node:fs';
 
+// middleware
+import { logger } from './middleware/logger.js';
+
 // routes
 import summarizerRoute from './routes/summarizer.route.js';
 import textToImageRoute from './routes/text-to-image.route.js';
@@ -28,7 +31,8 @@ try {
 
 // middleware
 app.use(express.static(rootDir));
-app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(logger);
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
