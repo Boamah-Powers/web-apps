@@ -1,1 +1,14 @@
-<h1>This is the text to image page</h1>
+<div class="text-to-image">
+	<div class="left-editor">
+		<form action="" method="post">
+			<textarea
+				placeholder="Enter your message ..."
+				name="formText"
+			>{{originalText}}</textarea>
+			<input type="submit" value="Submit" />
+		</form>
+	</div>
+	<div class="right-editor">
+		<img class="generatedImage" src="{{imgURL}}" alt="">
+	</div>
+</div>
